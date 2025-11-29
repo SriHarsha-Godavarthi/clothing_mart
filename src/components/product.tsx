@@ -1,4 +1,4 @@
-import {  useEffect,useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import "@/styles/product.css";
 
@@ -19,10 +19,25 @@ interface ProductProps {
 }
 }
 export default function Product({product}: ProductProps): React.JSX.Element {
+  const [imageLoading, setImageLoading] = useState(true);
+
   return (
     <div className="product-card">
         <div className="product-image-wrapper">
-          <Image loading="lazy" src={product.image} alt={product.title} width={200} height={200} className="product-image" />
+          {imageLoading && (
+            <div className="image-loading-spinner">
+              <div className="spinner-small"></div>
+            </div>
+          )}
+          <Image 
+            loading="lazy" 
+            src={product.image} 
+            alt={product.title} 
+            width={200} 
+            height={200} 
+            className={`product-image ${imageLoading ? 'image-loading' : 'image-loaded'}`}
+            onLoad={() => setImageLoading(false)}
+          />
         </div>
         <div className="product-details">
           <h6 className="product-title">{product.title}</h6>
