@@ -1,7 +1,5 @@
 'use client';
-import Image from "next/image";
 import SideNav from "@/components/sidenav";
-import {useTheme} from "@/contextapi/themeContext"
 import Headers from "@/components/header";
 import Products from "@/components/products";
 import { useState } from "react";
