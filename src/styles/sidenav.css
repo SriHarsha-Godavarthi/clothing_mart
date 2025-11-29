@@ -1,0 +1,25 @@
+
+.side-nav-container{
+     display: flex;
+     flex-direction: column;
+     position: fixed;
+     top:  4rem;
+     left: 0;
+     height: calc(100% - 4rem);
+     width: 10rem;
+}
+.nav-link{
+     padding-left: 1rem;
+}
+
+
+
+[data-theme="dark"] .side-nav-container{
+    background-color: #ffff;
+    color: black;
+}
+
+[data-theme="light"] .side-nav-container{
+    background-color: #111827;
+    color: #ffffff;
+}
