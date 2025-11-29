@@ -52,7 +52,7 @@ export default function Products(): React.JSX.Element {
         <>
             <div className="products-grid">      
                 {products.slice(0, displayCount).map((product) => (
-                    <Product key={product._id} product={product} />
+                    <Product key={product['_id']} product={product} />
                 ))}
             </div>
             {displayCount < products.length && (
